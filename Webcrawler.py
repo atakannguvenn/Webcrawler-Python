@@ -2,10 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def web_scraper(max_pages):
-    page = 0
-    while (page < max_pages):
-        url = "https://sfbay.craigslist.org/search/sby/sop?s=" + str(page)
+def web_scraper(max_items):
+    item = 0
+    while (item < max_items):
+        url = "https://sfbay.craigslist.org/search/sby/sop?s=" + str(item)
         source_code = requests.get(url)
         plain_text =  source_code.text
         # print(plain_text)
@@ -17,9 +17,9 @@ def web_scraper(max_pages):
             title = link.string
             print(title)
             print(href)
-            get_single_item_data(href)
+            #get_single_item_data(href)
             print("\n\n\n\n\n\n")
-        page += 1
+        item += 120
 
 def get_single_item_data(item_url):
     source_code = requests.get(item_url)
@@ -33,7 +33,7 @@ def get_single_item_data(item_url):
     #     href = link.get("href")
     #     print(href)
 
-web_scraper(1)
+web_scraper(240)
 
 
 #hw // use this library to make a web scraper in any other website // save the info in a txt file
