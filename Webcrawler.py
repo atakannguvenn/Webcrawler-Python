@@ -34,3 +34,6 @@ def get_single_item_data(item_url):
     #     print(href)
 
 web_scraper(1)
+
+
+#hw // use this library to make a web scraper in any other website // save the info in a txt file
